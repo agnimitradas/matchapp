@@ -1,0 +1,54 @@
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Heading Row -->
+    <div class="row">
+        <div class="col-md-8">
+            <img class="img-responsive img-rounded" src="http://placehold.it/900x350" alt="">
+        </div>
+        <!-- /.col-md-8 -->
+        <div class="col-md-4">
+            <h1>Brand Name</h1>
+            <p>This space is for brand descriptions.This space is for brand descriptions.This space is for brand descriptions.This space is for brand descriptions</p>
+            <a class="btn btn-primary btn-lg" [routerLink]="['/addnew']">Find a Match!</a>
+        </div>
+        <!-- /.col-md-4 -->
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Call to Action Well -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="well text-center">
+                Recent Matches
+            </div>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+
+    <!-- Content Row -->
+    <div class="row">
+        <div class="col-md-4" *ngFor="let data of matchData">
+            <h3>{{data.from | uppercase}} -> {{data.to | uppercase}}</h3>
+            <p>date: {{data.date}}</p>
+            <p>status: <span [style.color]="data.status === 'pending' ? 'red' : 'green'">{{data.status}}</span></p>
+            <a class="btn btn-default" href="#">More Info</a>
+        </div>
+        <!-- /.col-md-4 -->
+    </div>
+    <!-- /.row -->
+
+    <!-- Footer -->
+    <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; Your Website 2017</p>
+            </div>
+        </div>
+    </footer>
+
+</div>
+<!-- /.container -->
